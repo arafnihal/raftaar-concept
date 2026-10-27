@@ -315,7 +315,7 @@ footer.site .base{margin-top:48px;padding-top:20px;border-top:1px solid #2a2a2a;
 .bgword-wrap .gur-outline{position:absolute;left:-1vw;bottom:-.22em;font-family:var(--gur);font-weight:900;color:transparent;-webkit-text-stroke:2px rgba(92,23,36,.2);font-size:clamp(120px,20vw,320px);line-height:1;pointer-events:none;white-space:nowrap}
 .meaning{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:0}
 .meaning a{position:relative;text-decoration:none;aspect-ratio:3/4.4;overflow:hidden;display:block}
-.meaning .w{position:absolute;left:0;right:0;top:14%;text-align:center;font-size:clamp(60px,8vw,140px);transition:transform .8s var(--ease)}
+.meaning .w{position:absolute;left:0;right:0;top:14%;text-align:center;font-size:clamp(40px,5vw,96px);transition:transform .8s var(--ease)}
 .meaning img{position:absolute;left:12%;right:12%;bottom:14%;width:76%;height:62%;object-fit:contain;filter:drop-shadow(0 26px 26px rgba(0,0,0,.3));transition:transform .8s var(--ease)}
 .meaning a:hover img{transform:translateY(-3%) scale(1.04)}
 .meaning a:hover .w{transform:scale(1.04)}
@@ -407,6 +407,7 @@ footer.site .base{margin-top:48px;padding-top:20px;border-top:1px solid #2a2a2a;
   .story-hero p{left:var(--pad);right:var(--pad);top:120px;font-size:17px}
   .story-hero h1{font-size:24vw}
   .meaning{grid-template-columns:1fr 1fr}
+  .meaning .w{font-size:9.5vw}
   .totes{display:flex;overflow-x:auto;scrollbar-width:none}
   .totes a{flex:0 0 38vw}
   .hrow{grid-template-columns:1fr}
