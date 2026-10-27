@@ -50,7 +50,7 @@ const P=[
  {id:'gurmukhi-hoodie',n:'Gurmukhi Hoodie',word:'Gurmukhi',g:'ਗੁਰਮੁਖੀ',cat:'hoodies',price:85,
   tagline:'Gurmukhi on white heavyweight fleece, for those proud of where they come from.',
   desc:'A heritage graphic of Punjab in Gurmukhi on a clean white oversized hoodie, with a seamless one-piece hood.',
-  features:hoodieFeatures,chart:'hoodie',sizes:['XS','S','M','L'],out:{White:['XS','M']},theme:['#9EC0E6','#FFFFFF','#C3D8F0'],tags:['Gurmukhi map','Seamless hood','XS, M sold out'],
+  features:hoodieFeatures,chart:'hoodie',sizes:['XS','S','M','L'],out:{White:['XS','M']},theme:['#9EC0E6','#0E2742','#BCD4EF'],tags:['Gurmukhi map','Seamless hood','XS, M sold out'],
   colors:[{name:'White',hex:'#F1F0EC',cut:['IMG-5955.jpg'],photos:['71D60CCE-6564-43BE-8CAD-BFFAA43F6991.jpg','F7443C83-1616-46B9-9FB2-25CF4B61AC3A.jpg','6FFD7223-1C01-43C3-B70D-28C6994325D2.png','IMG_4419_JPG.jpg']}]},
  {id:'majajan-tee',n:'MAJAJAN Oversized Tee',cat:'tees',price:39,
   tagline:'The clean everyday tee, with a beige RAFTAAR logo.',
@@ -228,13 +228,15 @@ if(page==='home'){
     const old=stage.querySelector('.swap');if(old){old.classList.add(dir>0?'out':'in');setTimeout(()=>old.remove(),900)}
     stage.insertAdjacentHTML('beforeend',piece(p));const nw=stage.lastElementChild;nw.classList.add(dir>0?'in':'out');requestAnimationFrame(()=>requestAnimationFrame(()=>nw.classList.remove('in','out')));
     word.classList.add('out');setTimeout(()=>{word.innerHTML=[...p.word].map(c=>`<span>${c}</span>`).join('');word.classList.remove('out');word.classList.add('in');requestAnimationFrame(()=>requestAnimationFrame(()=>word.classList.remove('in')));
-      word.querySelectorAll('span').forEach((s,j)=>s.style.transitionDelay=(j*.03)+'s');},old?380:0);
+      word.querySelectorAll('span').forEach((s,j)=>s.style.transitionDelay=(j*.03)+'s');fit();},old?380:0);
     gw.textContent=p.g;
     setTimeout(()=>{dr.querySelectorAll('.tag').forEach((t,j)=>t.textContent=p.tags[j]);dr.classList.remove('changing')},old?650:0);
     info.innerHTML=`<div class="k">New drop</div><h2 class="cond">${esc(p.n.replace(/ (Hoodie|Oversized Tee)$/,''))}</h2><p>${esc(p.tagline)}</p><div class="price">${money(p.price)}</div><div class="acts"><a class="btn solid" href="product.html?p=${p.id}">View the ${p.cat==='tees'?'tee':'hoodie'}</a>${p.colors[0].cut[1]?'<button class="btn" data-turn>Turn around</button>':''}</div>`;
     const tb=info.querySelector('[data-turn]');if(tb)tb.onclick=()=>{const pc=stage.querySelector('.swap:last-child .piece');pc.classList.toggle('flip');restart()};
     [...bars.children].forEach((b,j)=>b.classList.toggle('on',j===i));
   }
+  function fit(){word.style.fontSize='';const w=word.scrollWidth,max=innerWidth*.96;const fs=parseFloat(getComputedStyle(word).fontSize);let iw=0;word.querySelectorAll('span').forEach(x=>iw+=x.getBoundingClientRect().width);if(iw>max)word.style.fontSize=(fs*max/iw)+'px'}
+  addEventListener('resize',fit);
   const goDrop=(i,dir)=>{di=(i+D.length)%D.length;paint(di,dir);restart()};
   dr.querySelector('[data-prev]').onclick=()=>goDrop(di-1,-1);dr.querySelector('[data-next]').onclick=()=>goDrop(di+1,1);
   function restart(){clearInterval(dt);if(!reduced)dt=setInterval(()=>{di=(di+1)%D.length;paint(di,1)},7000)}

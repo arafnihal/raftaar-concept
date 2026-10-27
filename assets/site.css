@@ -182,7 +182,7 @@ body.has-hero.scrolled .top .bagbtn .count span{color:#fff}
 
 footer.site{background:var(--ink);color:#d9d6d1;padding:64px 0 28px;font-size:14.5px}
 footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
-footer.site .big{font-size:clamp(80px,22vw,360px);overflow:hidden;color:#fff;margin-bottom:48px}
+footer.site .big{font-size:27vw;line-height:.78;overflow:hidden;color:#fff;margin-bottom:48px}
 footer.site h4{color:#fff;font-size:15px;margin-bottom:12px}
 footer.site ul{list-style:none;display:grid;gap:8px}
 footer.site a{text-decoration:none}
@@ -352,15 +352,17 @@ footer.site .base{margin-top:48px;padding-top:20px;border-top:1px solid #2a2a2a;
 .contact-list li{display:grid;grid-template-columns:110px 1fr;gap:12px}
 
 /* ---------- responsive ---------- */
+.pdp .right .acc2{display:none;margin-top:24px}
 @media (max-width:1100px){
   .pdp{grid-template-columns:1fr 1.2fr}
   .pdp .left{grid-column:1/-1}
   .pdp .left .acc{display:none}
   .pdp .right .acc2{display:block}
-  .grid-p{grid-template-columns:repeat(3,1fr)}
   .meaning{grid-template-columns:repeat(2,1fr)}
 }
-.pdp .right .acc2{display:none;margin-top:24px}
+@media (max-width:900px){
+  .grid-p{grid-template-columns:repeat(3,1fr)}
+}
 @media (max-width:760px){
   .top .bar{grid-template-columns:auto 1fr auto;height:58px}
   .top nav{display:none}
