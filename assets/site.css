@@ -122,9 +122,9 @@ body.has-hero.scrolled .top .bagbtn .count span{color:#fff}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;padding:0 var(--pad);margin-bottom:clamp(28px,4vw,52px)}
 .sec-head h2{font-size:clamp(44px,6vw,96px)}
 .sec-head p{max-width:26em;color:var(--mute)}
-.rail{position:relative;height:clamp(330px,34vw,470px);display:flex;justify-content:center;align-items:flex-start;perspective:1200px;padding:0 var(--pad)}
+.rail{position:relative;height:clamp(330px,36vw,560px);display:flex;justify-content:center;align-items:flex-start;perspective:1200px;padding:0 var(--pad)}
 .rail::before{content:"";position:absolute;left:var(--pad);right:var(--pad);top:22px;height:6px;border-radius:6px;background:linear-gradient(180deg,#f1f0ee,#bdb9b2 55%,#7e7a73);box-shadow:0 3px 6px rgba(0,0,0,.12);z-index:3}
-.hang{position:relative;flex:0 0 auto;width:clamp(150px,15vw,210px);margin:0 clamp(-62px,-5.2vw,-44px);transition:margin .6s var(--ease);z-index:1;-webkit-tap-highlight-color:transparent}
+.hang{position:relative;flex:0 0 auto;width:clamp(150px,17vw,280px);margin:0 clamp(-80px,-5.8vw,-44px);transition:margin .6s var(--ease);z-index:1;-webkit-tap-highlight-color:transparent}
 .hang .hook{position:relative;z-index:4;display:block;width:44%;margin:0 auto -6px}
 .hang .g{position:relative;transform-origin:50% 0;transform:rotateY(68deg);transition:transform .8s var(--ease),filter .4s;filter:brightness(.92)}
 .hang .g img{width:100%;height:auto;filter:drop-shadow(0 16px 18px rgba(0,0,0,.18))}
@@ -142,9 +142,9 @@ body.has-hero.scrolled .top .bagbtn .count span{color:#fff}
 
 /* ---------- HOME/STORY: runway (full-length models in depth) ---------- */
 .runway{position:relative;background:var(--bone);height:min(100vh,940px);min-height:620px;overflow:hidden}
-.runway .side{position:absolute;left:var(--pad);top:clamp(48px,8vh,90px);z-index:5;max-width:300px}
+.runway .side{position:absolute;left:var(--pad);top:clamp(48px,8vh,90px);z-index:5;max-width:360px}
 .runway .side .k{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--mute)}
-.runway .side h2{font-size:clamp(44px,5vw,80px);margin:10px 0 14px}
+.runway .side h2{font-size:clamp(44px,4.4vw,72px);margin:10px 0 14px}
 .runway .side .who{border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
 .runway .side .who b{display:block;font-size:20px}
 .runway .side .who span{color:var(--mute)}
@@ -385,7 +385,7 @@ footer.site .base{margin-top:48px;padding-top:20px;border-top:1px solid #2a2a2a;
   .rail::-webkit-scrollbar{display:none}
   .rail::before{width:1400px;right:auto}
   .hang{width:150px;margin:0 -50px}
-  .hang:first-child{margin-left:-10px}
+  .hang:first-child{margin-left:0}
   .runway{height:720px}
   .runway .side{right:var(--pad);max-width:none;top:32px}
   .runway .side h2{font-size:44px}
